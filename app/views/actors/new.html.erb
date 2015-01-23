@@ -1,0 +1,13 @@
+<%= form_for(@actor) do |f| %>
+    <div>
+        <%= f.label :fname %>
+        <%= f.text_field :fname %>
+    </div>
+    <div>
+        <%= f.label :lname %>
+        <%= f.text_field :lname %>
+    </div>    
+    <div>
+        <%= f.submit @actor.new_record? ? "Create Actor" : "Update Actor"  %>
+    </div>
+<% end %>
