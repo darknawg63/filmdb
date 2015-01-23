@@ -11,6 +11,6 @@ class Film < ActiveRecord::Base
   has_many :directors, :through => :productions
 
   def to_s
-    "#{title}, #{genre}"
+    "#{title} (#{release_date})"
   end
 end

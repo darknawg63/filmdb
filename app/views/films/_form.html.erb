@@ -1,0 +1,31 @@
+<%= form_for(@film) do |f| %>
+    <% if @film.errors.any? %>
+        <div id="errors">
+            <p>Please correct the following <%= pluralize(@film.errors.count, "error") %>:</p>
+            <ul>
+                <% @film.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_area :description, :size => "23x10" %>
+    </div>    
+    <div>
+        <%= f.label :genre %>
+        <%= f.text_field :genre %>
+    </div>
+        <div>
+        <%= f.label :release_date %>
+        <%= f.text_field :release_date %>
+    </div>
+    <div>
+        <%= f.submit @film.new_record? ? "Create Film" : "Update Film"  %>
+    </div>
+<% end %>
