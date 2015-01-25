@@ -1,13 +1,7 @@
-<%= form_for(@actor) do |f| %>
-    <div>
-        <%= f.label :fname %>
-        <%= f.text_field :fname %>
-    </div>
-    <div>
-        <%= f.label :lname %>
-        <%= f.text_field :lname %>
-    </div>    
-    <div>
-        <%= f.submit @actor.new_record? ? "Create Actor" : "Update Actor"  %>
-    </div>
+<h1>New Actor</h1>
+
+<%= render partial: 'form', locals: { doajax: false } %>
+
+<% content_for :aside do %>
+    <%= render 'sidebar' %>
 <% end %>

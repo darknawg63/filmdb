@@ -21,7 +21,7 @@ function drawPath() {
 		context.fillStyle="#fff";
 		context.font = "small-caps bold 37pt 'Georgia'";
 		context.textAlign = "left";
-		context.fillText("Film",100,50);
-		context.fillText("Database",100,100);
+		context.fillText("Film",100,50,200);
+		context.fillText("Database",100,100,200);
 	}
 }

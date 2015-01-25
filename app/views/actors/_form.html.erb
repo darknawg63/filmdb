@@ -1,0 +1,25 @@
+<% doajax = false unless (defined? doajax) %>
+<%= form_for(@actor, remote: doajax) do |f| %>
+    <% if @actor.errors.any? %>
+        <div id="errors">
+            <p>Please correct the following <%= pluralize(@actor.errors.count, "error") %>:</p>
+            <ul>
+                <% @actor.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div>
+        <%= f.label :Name %>
+        <%= f.text_field :fname %>
+    </div>
+    <div>
+        <%= f.label :Surname %>
+        <%= f.text_field :lname %>
+    </div>    
+    <div>
+        <%= f.submit %>
+        <span id="actor"></span>
+    </div>
+<% end %>

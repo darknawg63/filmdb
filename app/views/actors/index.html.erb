@@ -1,0 +1,16 @@
+<h1>Actors</h1>
+
+<p>Here are all of the actors:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Actor</th>
+        </tr>
+        <%= render partial: "actor", collection: @actors %>
+    </tbody>
+</table>
+
+<% content_for :aside do %>
+    <%= render 'sidebar' %>
+<% end %>
